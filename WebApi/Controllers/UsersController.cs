@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Data;
 using WebApi.Data.Entities;
@@ -13,11 +14,13 @@ namespace WebApi.Controllers {
 			_context = context;
 		}
 
+		/// <summary>Get all users from the database</summary>
 		// GET: api/Users
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<User>>> GetUsers()
 			=> await _context.Users.ToListAsync();
 
+		/// <summary>Get a single User by hid/her ID</summary>
 		// GET: api/Users/5
 		[HttpGet("{id}")]
 		public async Task<ActionResult<User>> GetUser(int id) {
