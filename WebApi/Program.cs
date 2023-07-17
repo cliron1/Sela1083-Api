@@ -8,7 +8,11 @@ builder.Services.AddControllers();
 builder.Services.AddSingleton<IPeopleService, PeopleService>();
 
 builder.Services.AddCors(x => x.AddDefaultPolicy(
-    opts => opts.WithOrigins("http://127.0.0.1:5500", "http://localhost:5500")
+    opts => opts
+        .WithOrigins("http://127.0.0.1:5500", "http://localhost:5500")
+        //.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod()
   )
 );
 
