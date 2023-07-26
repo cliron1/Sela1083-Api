@@ -475,3 +475,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+WebApp/appsettings.Production.json
+
+WebApp/**/*.mp4
+WebApp/**/*.zip
+WebApp/**/*.rar

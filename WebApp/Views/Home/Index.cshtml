@@ -1,8 +1,11 @@
-﻿@{
+﻿@inject IConfiguration config
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome, Class 1083</h1>
+    <p>@config["AppConfig:General:AppName"]</p>
+    <p>@config["AppConfig:General:Version"]</p>
+    <p>@config["AppConfig:General:Pwd"]</p>
 </div>
